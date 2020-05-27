@@ -16,10 +16,10 @@ struct ChecklistItem: Identifiable{
 
 struct ContentView: View {
     @State var checklistItems = [
-        ChecklistItem(name: "Walk the dog"),
-        ChecklistItem(name: "Brush my teeth"),
+        ChecklistItem(name: "Walk the dog",isChecked: false),
+        ChecklistItem(name: "Brush my teeth", isChecked: false),
         ChecklistItem(name: "Learn iOS development", isChecked: true),
-        ChecklistItem(name: "Soccer practice"),
+        ChecklistItem(name: "Soccer practice", isChecked: false),
         ChecklistItem(name: "Walk the dog", isChecked: true)
     ]
     var body: some View {
@@ -32,9 +32,20 @@ struct ContentView: View {
                         Spacer()//space
                         Text(checklistItem.isChecked ? "☑️" : "⬛️")
                     }
+                    .background(Color.white) //for whole ro clickable
+                    .onTapGesture {//checklistitem is defined in ForEach.
+                        //print("The user tapped \(checklistItem.name).") //not print in app.
+                        if let matchingIndex = self.checklistItems.firstIndex(where: { //if let : optional binding
+                            //if not null, do it
+                            $0.id == checklistItem.id }){
+                            self.checklistItems[matchingIndex].isChecked.toggle()//toggle == change
+                        }
+                        self.printChecklistContents()
+                    }
                 }//End of ForEach
                 .onDelete(perform: deleteListItem)
                 .onMove(perform: moveListItem)
+
             }//end of list
             .navigationBarItems(trailing: EditButton())
             .navigationBarTitle("Checklist")
