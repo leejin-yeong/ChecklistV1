@@ -13,18 +13,28 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             List{
-                Text(checklistItems[0])
-                    .onTapGesture{
-                        self.checklistItems[0] = "Take the dog to the vet"
+                ForEach(checklistItems, id: \.self){
+                    item in Text(item)
+                        .onTapGesture {
+                            self.checklistItems.append(item)
+                            self.printChecklistContents()
+                    }
                 }
-                Text(checklistItems[1])
-                Text(checklistItems[2])
-                Text(checklistItems[3])
-                Text(checklistItems[4])
-            }//End of List
+            }//end of list
             .navigationBarTitle("Checklist")
+            .onAppear(){
+                self.printChecklistContents()
+            }
         }
     }//End of body
+    
+//Methond
+func printChecklistContents(){
+    for item in checklistItems{
+        print(item)
+    }
+}
+    
 }//End of Content View
 
 struct ContentView_Previews: PreviewProvider {
