@@ -15,10 +15,6 @@ struct ContentView: View {
             List{
                 ForEach(checklistItems, id: \.self){
                     item in Text(item)
-                        .onTapGesture {
-                            self.checklistItems.append(item)
-                            self.printChecklistContents()
-                    }
                 }
             }//end of list
             .navigationBarTitle("Checklist")
