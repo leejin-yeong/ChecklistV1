@@ -15,6 +15,13 @@ struct ContentView: View {
             List{
                 ForEach(checklistItems, id: \.self){
                     item in Text(item)
+                    .onTapGesture {
+                        let indexesToRemove = IndexSet(integersIn: 0...4)
+                            print("indexesToRemove=", indexesToRemove)
+                        self.checklistItems.remove(atOffsets: indexesToRemove)
+                        //self.checklistItems.append(item)
+                        self.printChecklistContents()
+                    }
                 }
             }//end of list
             .navigationBarTitle("Checklist")
