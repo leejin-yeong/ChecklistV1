@@ -32,6 +32,7 @@ struct NewChecklistItemView: View {
                         Text("Add new item")
                     }//End of HStack
                 }//End of Button
+                    .disabled(newItemName.count == 0)
             }//End of List
             Text("Swipe down to cancel.")
         }//End of VStack
