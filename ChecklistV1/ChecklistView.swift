@@ -49,12 +49,13 @@ struct ChecklistView: View {
                 },
                 trailing: EditButton())
             .navigationBarTitle("Checklist")
-         /*   .onAppear(){
+            .onAppear(){
                 self.checklist.printChecklistContents()
             }//End of Navigation View
-                .sheet(isPresented: $newChecklistItemViewIsVisible){
-                    Text("New item screen coming soon!")
-            }*/
+            .sheet(isPresented: $newChecklistItemViewIsVisible){
+                //Text("New item screen coming soon!")
+                NewChecklistItemView()
+            }
         }
     }//End of body
     
