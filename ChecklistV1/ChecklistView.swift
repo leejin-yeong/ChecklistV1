@@ -20,21 +20,7 @@ struct ChecklistView: View {
             List{
                 ForEach(checklist.items){ //name in struct
                     checklistItem in
-                    HStack{
-                        Text(checklistItem.name)
-                        Spacer()//space
-                        Text(checklistItem.isChecked ? "☑️" : "⬛️")
-                    }
-                    .background(Color.white) //for whole ro clickable
-                    .onTapGesture {//checklistitem is defined in ForEach.
-                        //print("The user tapped \(checklistItem.name).") //not print in app.
-                        if let matchingIndex = self.checklist.items.firstIndex(where: { //if let : optional binding
-                            //if not null, do it
-                            $0.id == checklistItem.id }){
-                            self.checklist.items[matchingIndex].isChecked.toggle()//toggle == change
-                        }
-                        self.checklist.printChecklistContents()
-                    }
+                    RowView(checklistItem: checklistItem)
                 }//End of ForEach
                     .onDelete(perform: checklist.deleteListItem)
                     .onMove(perform: checklist.moveListItem)

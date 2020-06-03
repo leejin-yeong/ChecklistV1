@@ -17,6 +17,7 @@
 		9A33C0E82487A0880054500F /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A33C0E72487A0880054500F /* Checklist.swift */; };
 		9A33C0EA2487A4A10054500F /* EditChecklistItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A33C0E92487A4A10054500F /* EditChecklistItemView.swift */; };
 		9A33C0EC2487A9E60054500F /* NewChecklistItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A33C0EB2487A9E60054500F /* NewChecklistItemView.swift */; };
+		9A33C0EE2487B2230054500F /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A33C0ED2487B2230054500F /* RowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		9A33C0E72487A0880054500F /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 		9A33C0E92487A4A10054500F /* EditChecklistItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChecklistItemView.swift; sourceTree = "<group>"; };
 		9A33C0EB2487A9E60054500F /* NewChecklistItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChecklistItemView.swift; sourceTree = "<group>"; };
+		9A33C0ED2487B2230054500F /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				9A33C0EB2487A9E60054500F /* NewChecklistItemView.swift */,
 				9A33C0E72487A0880054500F /* Checklist.swift */,
 				9A33C0E92487A4A10054500F /* EditChecklistItemView.swift */,
+				9A33C0ED2487B2230054500F /* RowView.swift */,
 				9A13250A247E5D9F009D3D26 /* Assets.xcassets */,
 				9A13250F247E5D9F009D3D26 /* LaunchScreen.storyboard */,
 				9A132512247E5D9F009D3D26 /* Info.plist */,
@@ -161,6 +164,7 @@
 				9A33C0E82487A0880054500F /* Checklist.swift in Sources */,
 				9A132505247E5D9E009D3D26 /* AppDelegate.swift in Sources */,
 				9A132507247E5D9E009D3D26 /* SceneDelegate.swift in Sources */,
+				9A33C0EE2487B2230054500F /* RowView.swift in Sources */,
 				9A132509247E5D9E009D3D26 /* ChecklistView.swift in Sources */,
 				9A33C0EA2487A4A10054500F /* EditChecklistItemView.swift in Sources */,
 				9A33C0EC2487A9E60054500F /* NewChecklistItemView.swift in Sources */,
