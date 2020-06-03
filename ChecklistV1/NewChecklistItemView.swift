@@ -9,16 +9,30 @@
 import SwiftUI
 
 struct NewChecklistItemView: View {
+    
+    var checklist: Checklist
+    @State var newItemName = ""
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         VStack{
             Text("Add new item")
-            Text("Enter item name")
-            Button(action: {}){
-                HStack{
-                    Image(systemName: "plus.circle.fill")
-                    Text("Add new item")
-                }//End of HStack
-            }//End of Button
+            Form{
+               // Text("Enter item name")
+                TextField("Enter new item name here",text: $newItemName)
+                Button(action: {
+                    let newChecklistItems = ChecklistItem(name: self.newItemName)
+                    self.checklist.items.append(newChecklistItems)
+                    self.checklist.printChecklistContents()
+                    self.presentationMode.wrappedValue.dismiss()
+                })
+                {
+                    HStack{
+                        Image(systemName: "plus.circle.fill")
+                        Text("Add new item")
+                    }//End of HStack
+                }//End of Button
+            }//End of List
             Text("Swipe down to cancel.")
         }//End of VStack
     }//End of body
@@ -26,6 +40,6 @@ struct NewChecklistItemView: View {
 
 struct NewChecklistItemView_Previews: PreviewProvider {
     static var previews: some View {
-        NewChecklistItemView()
+        NewChecklistItemView(checklist: Checklist())
     }
 }
