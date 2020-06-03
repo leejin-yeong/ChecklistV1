@@ -17,7 +17,7 @@ struct ChecklistView: View {
     var body: some View {
         NavigationView{
             List{
-                ForEach(checklist.checklistItems){ //name in struct
+                ForEach(checklist.items){ //name in struct
                     checklistItem in
                     HStack{
                         Text(checklistItem.name)
@@ -27,10 +27,10 @@ struct ChecklistView: View {
                     .background(Color.white) //for whole ro clickable
                     .onTapGesture {//checklistitem is defined in ForEach.
                         //print("The user tapped \(checklistItem.name).") //not print in app.
-                        if let matchingIndex = self.checklist.checklistItems.firstIndex(where: { //if let : optional binding
+                        if let matchingIndex = self.checklist.items.firstIndex(where: { //if let : optional binding
                             //if not null, do it
                             $0.id == checklistItem.id }){
-                            self.checklist.checklistItems[matchingIndex].isChecked.toggle()//toggle == change
+                            self.checklist.items[matchingIndex].isChecked.toggle()//toggle == change
                         }
                         self.checklist.printChecklistContents()
                     }
